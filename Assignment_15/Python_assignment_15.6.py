@@ -1,0 +1,29 @@
+#Q.6 Write a lambda function using reduce() which accepts a list of numbers and returns the minimum element.
+
+from functools import reduce
+
+def Min_element(A,B):
+    if A<B:
+        return A
+    else:
+        return B
+
+def main():
+    size = 0
+    numbers_list = []
+
+    print("Enter the size of the list:")
+    size = int(input())
+
+    print("Enter the elements :")
+    for i in range(size):
+        num = int(input())
+        numbers_list.append(num)
+
+    # Min = reduce(lambda X,Y: X if (X<Y) else Y,numbers_list)
+    Min = reduce(Min_element,numbers_list)
+
+    print("Minimum Number is: ",Min)
+
+if __name__ == "__main__":
+    main()
